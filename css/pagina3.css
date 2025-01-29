@@ -23,7 +23,7 @@ a.link {
 }
 
 tr.linDestaque {
-    background-color: #444;
+    background-color: #161515;
     color: white;
 }
 
@@ -31,7 +31,7 @@ tr.linDestaque {
     width: 150px;
     height: 150px;
     margin: 20px;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
 }
 
 #quadrados>.quadradinho {
@@ -43,13 +43,38 @@ tr.linDestaque {
 }
 
 .linMontandoLayout{
-    background-color: #666;
+    color: white;
+    background-color: #504e4e;
 
 }
 .btnLeiaMais{
     float: right;
 }
+.maisArtigos{ 
+    padding: 5px;
+    color: white;
+    background-color: #444;
+}
+.colMaisLidos{
+    color: white;
+    background-color: #3a3939;
+    
+}
 
+#placeholder input {
+    font-size: 15px; /* Ajuste o tamanho da fonte conforme necessário */
+    width: 96%; /* Faz o input ocupar toda a largura do container */
+}
 
+#placeholder input::placeholder {
+    font-size: 15px; /* Ajuste o tamanho da fonte do placeholder */
+    color: #999; /* Cor do placeholder */
+}
 
-
+.colProgramacao {
+    color: white;
+    background-color: #5d5b5b;
+}
+.Programacao{
+    background-color: #161515;
+}

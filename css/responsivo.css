@@ -1,0 +1,34 @@
+@media (min-width: 600px) {
+    .cabecalho{
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    
+    }
+    .container {
+        display: flex; /* Organiza os quadradinhos em linha */
+        gap: 10px; /* Espaçamento entre os quadradinhos */
+    }
+    
+    .quadradinho {
+        width: 100px; /* Largura de 100px */
+        height: 100px; /* Altura de 100px */
+        border: 2px solid #000; /* Borda preta de 2px */
+    }
+    
+    /* Cores específicas para cada quadradinho */
+    .quad1 {
+        background-color: #FF5733; /* Laranja */
+    }
+    
+    .quad2 {
+        background-color: #33FF57; /* Verde */
+    }
+    
+    .quad3 {
+        background-color: #3357FF; /* Azul */
+    }
+    
+    .quad4 {
+        background-color: #F033FF; /* Rosa */
+    }
