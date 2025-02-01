@@ -1,0 +1,114 @@
+@import url("../css/reset.css");
+
+/* Somente Celular */
+@media only screen and (max-width:768px) {
+
+}
+
+/* Somente Tablet */
+@media only screen and (min-width:769px) {
+
+    *{
+        border-radius: 10px;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw;
+        height: 5vw;
+    }
+
+    nav a {
+        background-color: #00b3ff;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    section img {
+        margin: 0.5vw;
+        width: 100vw;
+        aspect-ratio: 16/9;
+    }
+
+    section.art {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100vw;
+    }
+
+    section.art article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25vw;
+        margin: 0.5vw;
+        height: 300px;
+        background-color: #00b3ff;
+        color: white;
+
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 10vh;
+        margin: 0.5vw;
+        background-color: #00b3ff;
+        color: white;
+    }
+
+}
+
+/* Somente Desktop */
+@media only screen and (min-width: 992px) {
+    header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw;
+        height: 5vw;
+    }
+
+    section img {
+        margin: 0.5vw;
+        width: 100vw;
+        aspect-ratio: 16/9;
+    }
+
+    section.art {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os artigos quebrem para a linha seguinte */
+        gap: 1vw; /* Espaço entre os artigos */
+    }
+
+    section.art article {
+        width: 48vw; /* Deixa os artigos com largura de 48% da tela para caber dois ao lado */
+        height: 20vw; /* Ajuste da altura dos artigos */
+    }
+
+    section.art article:nth-child(1), 
+    section.art article:nth-child(2) {
+        /* Os dois primeiros artigos ficam na mesma linha */
+        flex: 0 0 48%; 
+    }
+
+    section.art article:nth-child(3), 
+    section.art article:nth-child(4) {
+        /* Os dois últimos artigos ficam na linha seguinte */
+        flex: 0 0 48%; 
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        height: 4vh;
+    }
+}
