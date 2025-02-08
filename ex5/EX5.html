@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EX5.css">
+    <title>Entendendo JSON e Storages</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <!-- Imagem à esquerda -->
+            <div class="image-section">
+                <img src="https://i.pinimg.com/736x/e0/03/1c/e0031c0baf6d7b1d022b5cf13089db70.jpg" alt="Imagem de exemplo">
+            </div>
+            
+            <!-- Formulário à direita da imagem -->
+            <div class="form-section">
+                <h2 class="registro">Register</h2> 
+                <form id="registerForm">
+                    <input type="text" name="txtUsername" id="txtUsername" placeholder="Username"> <br> <br>
+                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Email address"> <br> <br>
+                    <input type="password" placeholder="Password" id="senha" name="senha"> <br> <br>
+                    <input type="password" placeholder="Confirm Password" id="confirmSenha" name="confirmSenha"> <br> <br>
+                    <button type="submit" id="submitBtn">REGISTER</button>
+                </form>
+                
+                <!-- A tabela está inicialmente oculta -->
+                <table id="userTable" border="1" cellspacing="0" cellpadding="5" style="width: 100%; margin-top: 20px; display: none;">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <a href="link" id="text1">Sign in</a>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Registros serão exibidos aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/json.js"></script>
+    <script>
+        // Lê os registros do localStorage ou cria uma lista vazia
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+
+        // Função para atualizar a tabela de usuários
+        function updateTable() {
+            const tableBody = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+            tableBody.innerHTML = '';  // Limpa a tabela antes de adicionar os novos dados
+            users.forEach(user => {
+                let row = tableBody.insertRow();
+                row.insertCell(0).innerText = user.username;
+                row.insertCell(1).innerText = user.email;
+            });
+        }
+
+        // Função para validar a senha
+        function validatePassword(password) {
+            const regex = /^(?=.*[0-9].*[0-9])[A-Za-z0-9]{8,}$/;
+            return regex.test(password);
+        }
+
+        // Função para verificar se o usuário já existe
+        function userExists(username) {
+            return users.some(user => user.username === username);
+        }
+
+        // Lidar com o envio do formulário
+        document.getElementById('registerForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById('txtUsername').value.trim();
+            const email = document.getElementById('txtEmail').value.trim();
+            const password = document.getElementById('senha').value;
+            const confirmPassword = document.getElementById('confirmSenha').value;
+
+            // Validação de campos vazios
+            if (!username || !email || !password || !confirmPassword) {
+                alert("Todos os campos devem ser preenchidos!");
+                return;
+            }
+
+            // Validação do nome de usuário
+            if (userExists(username)) {
+                alert("O nome de usuário já existe.");
+                return;
+            }
+
+            // Validação da senha
+            if (!validatePassword(password)) {
+                alert("A senha deve ter pelo menos 8 caracteres e 2 números.");
+                return;
+            }
+
+            // Validação de confirmação de senha
+            if (password !== confirmPassword) {
+                alert("As senhas não coincidem!");
+                return;
+            }
+
+            // Salvar o novo usuário no localStorage
+            const newUser = { username, email, password };
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Limpar os campos
+            document.getElementById('txtUsername').value = '';
+            document.getElementById('txtEmail').value = '';
+            document.getElementById('senha').value = '';
+            document.getElementById('confirmSenha').value = '';
+
+            // Atualizar a tabela e bloquear os campos
+            updateTable();
+            document.getElementById('txtUsername').disabled = true;
+            document.getElementById('txtEmail').disabled = true;
+            document.getElementById('senha').disabled = true;
+            document.getElementById('confirmSenha').disabled = true;
+            document.getElementById('submitBtn').textContent = "UNLOCKER";
+            
+            // Mostrar a tabela somente após o registro
+            document.getElementById('userTable').style.display = 'table';
+
+            document.getElementById('submitBtn').onclick = function () {
+                // Desbloquear os campos
+                document.getElementById('txtUsername').disabled = false;
+                document.getElementById('txtEmail').disabled = false;
+                document.getElementById('senha').disabled = false;
+                document.getElementById('confirmSenha').disabled = false;
+                document.getElementById('submitBtn').textContent = "REGISTER";
+                users = JSON.parse(localStorage.getItem('users')) || [];
+                updateTable();
+            };
+        });
+
+        // Atualizar a tabela ao carregar a página
+        updateTable();
+    </script>
+</body>
+</html>
+
+
+

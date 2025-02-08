@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #08009c, #3091fa);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha as seções no topo */
+    width: 1000px; /* Define uma largura para a seção */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: transparent; /* Remover fundo branco da seção */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* A largura do container ocupa toda a seção */
+    gap: 0%; /* Remove qualquer espaçamento extra entre as seções */
+}
+
+.image-section {
+    width: 45%; /* Imagem ocupa 45% do container */
+    display: flex;
+    flex-direction: column;
+    background-color: transparent; /* Remover fundo branco da imagem */
+    margin-right: 0; /* Remover margem à direita para colar o formulário */
+    
+}
+
+.image-section img {
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: block; /* Remove espaços em branco abaixo da imagem */
+    border: none; /* Remove qualquer borda, caso haja */
+    margin: 0; /* Garante que não há margem */
+    gap: 0;
+}
+
+.form-section {
+    width: 50%; /* Formulário ocupa 50% do container */
+    background-color: rgb(255, 255, 255); /* Fundo branco apenas para o formulário */
+    padding: 30px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin: 0; /* Remover margem à esquerda para colar a imagem */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 60px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#submitBtn {
+    width: 100%;
+    padding: 20px;
+    border-radius: 60px;
+    border: 1px solid #ffffff;
+    background-color: rgb(0, 111, 229);
+    color: #fffffff6;
+}
+
+.registro {
+    color: #575757;
+    text-align: center;
+}
+
+#text1 {
+    text-align: center;
+    display: block; /* Faz o "Sign in" ocupar toda a largura do contêiner */
+    margin-top: 10px;
+    font-size: 16px;
+    color: #3091fa;
+    text-decoration: none; /* Remove o sublinhado */
+}
