@@ -18,21 +18,32 @@
             <div class="form-section">
                 <h2 class="registro">Register</h2> 
                 <form id="registerForm">
-                    <input type="text" name="txtUsername" id="txtUsername" placeholder="Username"> <br> <br>
-                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Email address"> <br> <br>
-                    <input type="password" placeholder="Password" id="senha" name="senha"> <br> <br>
-                    <input type="password" placeholder="Confirm Password" id="confirmSenha" name="confirmSenha"> <br> <br>
+                    <input type="text" name="txtUsername" id="txtUsername" placeholder="Username"> <br>
+                    <input type="text" name="txtEmail" id="txtEmail" placeholder="Email address"> <br>
+                    <hr class="hr1"> <!-- Linha abaixo do email -->
+                    <input type="password" placeholder="Password" id="senha" name="senha"> <br>
+                    <input type="password" placeholder="Confirm Password" id="confirmSenha" name="confirmSenha"> <br>
                     <button type="submit" id="submitBtn">REGISTER</button>
                 </form>
                 
                 <!-- A tabela está inicialmente oculta -->
                 <table id="userTable" border="1" cellspacing="0" cellpadding="5" style="width: 100%; margin-top: 20px; display: none;">
                     <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <a href="link" id="text1">Sign in</a>
-                        </tr>
+                        <tr id="users">
+                            <td>Username</td>
+                            <td>Email</td>
+                            <a href="link" id="text1">Sign in</a>&nbsp;
+                            <hr>
+                        </tr>&nbsp;
+                        <button class="btnGoogle">
+                            <i class="fa-brands fa-google"></i>
+                            SIGN UP WITH GOOGLE
+                        </button>&nbsp;
+    
+                        <button class="btnFacebook">
+                            <i class="fa-brands fa-facebook"></i>
+                            SIGN UP WITH FACEBOOK
+                        </button>
                     </thead>
                     <tbody>
                         <!-- Registros serão exibidos aqui -->

@@ -1,3 +1,10 @@
+/* Dá um reset no CSS do HTML */
+@import url('../css/reset.css');
+/* Importa o CSS dos Ícones do FontAwesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css');
+/* Importa o CSS da Fonte Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -58,9 +65,10 @@ section {
 input[type="text"],
 input[type="password"] {
     width: 95%;
-    padding: 13px;
+    padding: 10px; /* Reduzido o padding */
     border: 1px solid #ccc;
     border-radius: 60px;
+    margin-bottom: 8px; /* Adiciona um pequeno espaço entre os campos */
 }
 
 form {
@@ -108,4 +116,30 @@ tr:nth-child(even) {
     font-size: 16px;
     color: #3091fa;
     text-decoration: none; /* Remove o sublinhado */
+}
+
+.btnFacebook {
+    display: block;
+    padding: 20px;
+    color: white;
+    border-radius: 60px;
+    width: 100%;
+    background-color: #053763;
+}
+.btnGoogle {
+    display: block;
+    padding: 20px;
+    color: white;
+    border-radius: 60px;
+    width: 100%;
+    background-color: #ff3700;
+    
+}
+#users {
+    display: flex;
+}
+
+.hr1 {
+    width: 100%;
+    margin: 10px 0; /* Controla o espaçamento da linha horizontal */
 }
